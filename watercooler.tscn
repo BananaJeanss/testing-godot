@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct1tgl8jr1rdj"]
+
+[ext_resource type="Script" uid="uid://5yj0ffcmf2u2" path="res://scripts/watercooler.gd" id="1_5y5f8"]
+[ext_resource type="Texture2D" uid="uid://8usqj1v1x8tc" path="res://assets/Watercooler.webp" id="2_m4y6f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_igel3"]
+size = Vector2(190, 334)
+
+[node name="Watercooler" type="Area2D"]
+collision_layer = 8
+collision_mask = 5
+script = ExtResource("1_5y5f8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3.81481, 3.81482)
+texture = ExtResource("2_m4y6f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_igel3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
